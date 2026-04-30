@@ -1,66 +1,35 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { KineticButton } from "@/components/KineticButton/KineticButton";
+import { TechnicalCard } from "@/components/TechnicalCard/TechnicalCard";
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="p-10 min-h-screen space-y-12">
+      {/* Nagłówek w stylu "Machined Label" */}
+      <h1 className="text-6xl font-bold max-w-2xl">
+        Precision <span className="text-[var(--primary-container)]">Brutalism</span> Engine
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Asymetria: Lewa strona cięższa */}
+        <div className="space-y-6">
+          <TechnicalCard
+            label="V-01 / THERMAL" 
+            title="KINETIC CORE ACTIVE" 
+            description="System diagnostyczny wykrył optymalne parametry pracy. Wszystkie moduły 0px border-radius gotowe do operacji."
+          />
+          <KineticButton>Uruchom Protokół</KineticButton>
+        </div>
+
+        {/* Prawa strona lżejsza - Blueprint vibe */}
+        <div className="border-l-2 border-[var(--outline-variant)] pl-8 py-10">
+          <p className="text-sm opacity-50 font-mono">
+            {'// DATA_STREAM_049'}<br />
+            {'// STATUS: OPERATIONAL'}<br />
+            {'// GRID: FRACTURED'}
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

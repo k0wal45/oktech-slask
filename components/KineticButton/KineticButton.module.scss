@@ -1,0 +1,45 @@
+@use "@/styles/abstracts/variables" as *;
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary-fixed);
+  font-family: var(--font-space);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  // Ramka SVG ukryta domyślnie
+  .borderOverlay {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    pointer-events: none;
+
+    rect {
+      fill: none;
+      stroke: var(--primary-container);
+      stroke-width: 2px;
+      stroke-dasharray: 400; // Wartość do dostosowania
+      stroke-dashoffset: 400;
+      transition: stroke-dashoffset 0.3s ease-in-out;
+    }
+  }
+
+  &:hover .borderOverlay rect {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--surface-lowest);
+  color: #ffffff;
+  font-family: var(--font-inter);
+  line-height: 1.5;
+}
+
+h1, h2, h3, .machined-label {
+  font-family: var(--font-space);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}

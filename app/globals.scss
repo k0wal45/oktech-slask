@@ -1,0 +1,10 @@
+@forward "../styles/main.scss";
+
+:root {
+  --border-radius-none: 0px;
+}
+
+body {
+  background-color: var(--surface-lowest);
+  font-family: var(--font-inter);
+}
