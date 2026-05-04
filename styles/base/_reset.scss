@@ -1,19 +1,82 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*, ::before, ::after {
+  box-sizing: border-box; // Podstawa Tailwinda - padding nie zwiększa szerokości
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+  
+  // KLUCZOWE DLA PRECISION BRUTALISM:
+  border-radius: 0 !important; 
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: var(--font-inter), ui-sans-serif, system-ui;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
+  margin: 0;
+  line-height: inherit;
   background-color: var(--surface-lowest);
   color: #ffffff;
-  font-family: var(--font-inter);
-  line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
-h1, h2, h3, .machined-label {
-  font-family: var(--font-space);
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
-  font-weight: 700;
+// 1. Usunięcie domyślnych stylów z linków
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// 2. Reset dla przycisków i inputów (Preflight style)
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+button, [role="button"] {
+  cursor: pointer;
+  text-transform: none;
+}
+
+// 3. Reset dla list (często używane w menu)
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// 4. Reset obrazków
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// 5. Reset nagłówków (usuwamy marginesy, aby kontrolować je w systemie 4px)
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+// 6. Reset dla formularzy
+textarea {
+  resize: vertical;
+}
+
+input::placeholder, textarea::placeholder {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.4);
 }

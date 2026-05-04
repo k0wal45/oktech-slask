@@ -1,0 +1,47 @@
+@use "@/styles/abstracts/variables" as *;
+
+.sidebar {
+  position: sticky;
+  left: 0;
+  top: 100px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface-container-low);
+  width: 200px;
+  height: 100%;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-family: var(--font-space);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  
+  &.active {
+    background-color: var(--primary-container);
+    color: var(--on-primary-fixed);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+    }
+  }
+
+  &:hover:not(.active) {
+    background-color: var(--surface-container-high);
+    color: #ffffff;
+  }
+}
