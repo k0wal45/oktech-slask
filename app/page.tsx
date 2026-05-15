@@ -1,5 +1,6 @@
 "use client"
 
+import HeroLanding from "@/components/Hero/HeroLanding/HeroLanding";
 import { useNav } from "@/context/NavContext";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <div className="p-20">
+      <HeroLanding />
       <section id="podnosniki" style={{height: "100vh", width: "100%", display: "grid", placeItems: "center", backgroundColor: "red", }}>
         <h2 className="machined-label">Podnośniki</h2>
       </section>

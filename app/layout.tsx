@@ -1,18 +1,18 @@
-import { Space_Grotesk, Inter } from 'next/font/google';
-import "./globals.scss"
-import { NavProvider } from '@/context/NavContext';
-import { SidebarNav } from '@/components/SidebarNav/SidebarNav';
-import Navbar from '@/components/Navbar/Navbar';
+import { Space_Grotesk, Inter } from "next/font/google";
+import "./globals.scss";
+import { NavProvider } from "@/context/NavContext";
+import { SidebarNav } from "@/components/SidebarNav/SidebarNav";
+import Navbar from "@/components/Navbar/Navbar";
 
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  variable: '--font-space',
-  weight: ['700'] 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter' 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export default function RootLayout({
@@ -25,9 +25,9 @@ export default function RootLayout({
       <body>
         <NavProvider>
           <Navbar />
-          <div className='body_container'>
-            <SidebarNav /> 
-            
+          <div className="body_container">
+            <SidebarNav />
+
             <main className="flex-1 ml-[280px] bg-[var(--surface-lowest)]">
               {children}
             </main>
@@ -37,4 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-

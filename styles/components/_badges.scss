@@ -1,0 +1,21 @@
+// styles/components/_badges.scss
+@use "../abstracts/variables" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .75rem; // Zwiększony padding dla lepszych proporcji
+  font-size: .7rem; // Nieco mniejszy, by był bardziej "techniczny"
+  font-weight: 700;
+  letter-spacing: 0.15em; // Większy światło między literami dla stylu tech
+  width: fit-content;
+  text-transform: uppercase;
+  
+  background-color: var(--primary); 
+  color: var(--on-primary-fixed);
+  font-family: var(--font-space);
+  
+  transition: transform 0.2s ease;
+
+}

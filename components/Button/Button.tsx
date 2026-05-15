@@ -6,7 +6,7 @@ interface ButtonProps {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'ghost';
+  variant?: 'primary' | 'outline';
   className?: string;
 }
 

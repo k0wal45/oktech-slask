@@ -1,11 +1,10 @@
-*, ::before, ::after {
-  box-sizing: border-box; // Podstawa Tailwinda - padding nie zwiększa szerokości
+*,
+::before,
+::after {
+  box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   border-color: currentColor;
-  
-  // KLUCZOWE DLA PRECISION BRUTALISM:
-  border-radius: 0 !important; 
 }
 
 html {
@@ -16,7 +15,6 @@ html {
   font-family: var(--font-inter), ui-sans-serif, system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 body {
@@ -34,7 +32,11 @@ a {
 }
 
 // 2. Reset dla przycisków i inputów (Preflight style)
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   font-weight: inherit;
@@ -45,27 +47,41 @@ button, input, optgroup, select, textarea {
   background: transparent;
 }
 
-button, [role="button"] {
+button,
+[role="button"] {
   cursor: pointer;
   text-transform: none;
 }
 
 // 3. Reset dla list (często używane w menu)
-ol, ul {
+ol,
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 // 4. Reset obrazków
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 // 5. Reset nagłówków (usuwamy marginesy, aby kontrolować je w systemie 4px)
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
   margin: 0;
@@ -76,7 +92,8 @@ textarea {
   resize: vertical;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   opacity: 1;
   color: rgba(255, 255, 255, 0.4);
 }
