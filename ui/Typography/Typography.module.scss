@@ -1,0 +1,161 @@
+@use "@/styles/abstracts/variables" as *;
+
+.typography {
+  margin: 0;
+  color: inherit;
+}
+
+/* --- DISPLAY & HERO HEADINGS --- */
+.hero {
+  font-family: var(--font-space);
+  font-size: 2.8rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+
+  @media (min-width: 1024px) {
+    font-size: 5rem;
+  }
+}
+
+.display {
+  font-family: var(--font-space);
+  font-size: 3rem;
+  line-height: 1.1em;
+  font-weight: 700;
+
+  @media (min-width: 1300px) {
+    font-size: 4rem;
+  }
+}
+
+/* --- HEADINGS (Space Grotesk) --- */
+.h1 {
+  font-family: var(--font-space);
+  font-size: 2.125rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+}
+
+.h2 {
+  font-family: var(--font-space);
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+.h3 {
+  font-family: var(--font-space);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+}
+
+.h4 {
+  font-family: var(--font-space);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.h5 {
+  font-family: var(--font-space);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- STATS & METRICS (Liczby z Data.module.scss) --- */
+.statNumber {
+  font-family: var(--font-space);
+  font-size: 5rem;
+  line-height: 0.8;
+  font-weight: 700;
+
+  @media (min-width: 1300px) {
+    font-size: 7rem;
+  }
+}
+
+/* --- TITLES & OVERLINES --- */
+.overline {
+  font-family: var(--font-space);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.titleL {
+  font-family: var(--font-space);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.titleM {
+  font-family: var(--font-space);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.titleS {
+  font-family: var(--font-space);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* --- BODY (Inter) --- */
+.bodyXl {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+.bodyL {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  line-height: 1.55;
+}
+.bodyM {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.bodyS {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.caption {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: normal;
+}
+
+/* --- MODIFIERS --- */
+.lineHeightNone {
+  line-height: 1;
+}

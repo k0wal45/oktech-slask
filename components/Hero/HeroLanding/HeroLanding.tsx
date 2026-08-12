@@ -1,28 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/ui/Container/Container";
+import { Typography } from "@/ui/Typography/Typography";
+import { Button } from "@/ui/Button/Button";
 import styles from "./HeroLanding.module.scss";
-import { Button } from "@/components/Button/Button";
 
 const HeroLanding = () => {
   return (
-    <header className={styles.hero}>
-      <div className="badge">Lorem ipsum dolor sit.</div>
-      <h1>
+    <Container as="header" size="none" className={styles.hero}>
+      <Typography as="h1" variant="hero" className={styles.title}>
         Oktech
         <br />
-        <span>
+        <Typography as="span" variant="hero" className={styles.highlight}>
           Transport HDS
           <br />
-        </span>
-        Kliamtyzacje
+        </Typography>
+        Klimatyzacje
         <br />
         Śląsk
         <br />
-      </h1>
+      </Typography>
+
       <div className={styles.buttonWrapper}>
-        <Button variant="primary" href="/uslugi">
+        <Button as={Link} href="/uslugi" variant="primary">
           Sprawdź usługi
         </Button>
-        <Button variant="outline" href="/kontakt">
+        <Button as={Link} href="/kontakt" variant="outline">
           Skontaktuj się
         </Button>
       </div>
@@ -34,7 +37,7 @@ const HeroLanding = () => {
         alt="Flota Oktech Śląsk"
         loading="eager"
       />
-    </header>
+    </Container>
   );
 };
 

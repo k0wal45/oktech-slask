@@ -3,6 +3,7 @@ import "./globals.scss";
 import { NavProvider } from "@/context/NavContext";
 import { SidebarNav } from "@/components/SidebarNav/SidebarNav";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
 
             <main className="flex-1 ml-[280px] bg-[var(--surface-lowest)]">
               {children}
+              <Footer />
             </main>
           </div>
         </NavProvider>

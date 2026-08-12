@@ -1,27 +1,30 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import styles from "./SidebarNav.module.scss";
 import { useNav } from "@/context/NavContext";
+import { Typography } from "@/ui/Typography/Typography";
+import styles from "./SidebarNav.module.scss";
 
 export const SidebarNav = () => {
   const { navInfo } = useNav();
   const [activeId, setActiveId] = useState("");
 
   const { sections } = navInfo;
+
   useEffect(() => {
     if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+          if (entry.isIntersecting) {
             setActiveId(entry.target.id);
           }
         });
       },
       {
-        threshold: [0.1, 0.5],
-        rootMargin: "-20% 0px -70% 0px",
+        rootMargin: "-89% 0px -20% 0px",
+        threshold: 0,
       },
     );
 
@@ -45,14 +48,19 @@ export const SidebarNav = () => {
   return (
     <nav className={styles.sidebar}>
       {sections.map((section) => (
-        <div
+        <button
           key={section.id}
+          type="button"
           onClick={() => scrollToSection(section.id)}
-          className={`${styles.navItem} ${activeId === section.id ? styles.active : ""}`}
+          className={`${styles.navItem} ${
+            activeId === section.id ? styles.active : ""
+          }`}
         >
           {section.icon && <span className={styles.icon}>{section.icon}</span>}
-          <span className={styles.labelText}>{section.label}</span>
-        </div>
+          <Typography as="span" variant="titleS" className={styles.labelText}>
+            {section.label}
+          </Typography>
+        </button>
       ))}
     </nav>
   );

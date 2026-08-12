@@ -1,0 +1,53 @@
+@use "@/styles/abstracts/variables" as *;
+
+.cta {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  border-left: 10px solid var(--primary);
+  gap: 1rem;
+  background-color: var(--surface-container);
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 10;
+
+    h5 {
+      color: var(--surface-bright);
+      text-transform: uppercase;
+    }
+  }
+
+  a {
+    z-index: 10;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    right: 12px;
+
+    font-size: 8rem;
+    color: var(--surface-container-high);
+    font-family: var(--font-space);
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      right: auto;
+      left: 20px;
+    }
+  }
+}

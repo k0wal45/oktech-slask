@@ -1,0 +1,124 @@
+@use "@/styles/abstracts/variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-display); // Ze zmiennych: Space Grotesk
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0; // Surowy, industrialny styl
+  outline: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Obsługa animacji dla ikon (np. strzałki w prawo)
+  svg {
+    transition: transform 0.2s ease;
+  }
+}
+
+/* --- VARIANTS --- */
+.primary {
+  background-color: var(--primary);
+  color: var(--on-primary-fixed);
+
+  &:hover:not(:disabled) {
+    background-color: var(--primary-container);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 var(--on-primary-fixed);
+
+    svg {
+      transform: translateX(4px);
+    } // Animacja ikony
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0); // Lepsze wrażenie "wciśnięcia" niż scale
+    box-shadow: 0 0 0 var(--on-primary-fixed);
+  }
+}
+
+.outline {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff; // Możesz podmienić na var(--on-surface) jeśli taką masz
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+
+  &:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.black {
+  background-color: var(--surface-lowest);
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: var(--surface);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 white;
+
+    svg {
+      transform: translateX(4px);
+    } // Animacja ikony
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0); // Lepsze wrażenie "wciśnięcia" niż scale
+    box-shadow: 0 0 0 white;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: #ffffff;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* --- SIZES --- */
+.sizeMd {
+  padding: 0.8rem 2rem;
+  font-size: 0.875rem;
+  height: fit-content;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.sizeSm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+}
+
+.sizeLg {
+  padding: 1.2rem 2.5rem;
+  font-size: 1rem;
+}
+
+.sizeIcon {
+  padding: 0.8rem;
+  height: 48px;
+  width: 48px;
+}

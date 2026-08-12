@@ -5,21 +5,21 @@
   --surface-container-low: #1c1b1b;
   --surface-container: #201f1f;
   --surface-container-high: #2a2a2a;
-  --surface-container-highest: #353534;
-  --surface-bright: #393939;
+  --surface-container-highest: #888888;
+  --surface-bright: #c0c0c0;
 
   // Kinetic Energy (Primary)
-  --primary: #FF9A00;
+  --primary: #ff9a00;
   --primary-container: #ffc183;
   --on-primary-fixed: #2c1600;
 
   --secondary: #9d6d3a;
-  
+
   // Ghost & Accents
   --outline-variant: rgba(84, 68, 52, 0.15);
   --error: #ffb4ab;
 
   // Typography
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
 }

@@ -11,11 +11,10 @@
   justify-content: space-between;
   align-items: center;
   background: var(--surface-container-low);
-  font-family: var(--font-space);
   z-index: 30;
 
   .container {
-    width: inherit;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +33,8 @@
       padding: 1rem;
       background-color: var(--surface-container-low);
       flex-direction: column;
-      align-items: end;
-      justify-content: start;
+      align-items: flex-end;
+      justify-content: flex-start;
       transform: translateX(100%);
       border-left: solid 2px var(--primary);
     }
@@ -43,21 +42,21 @@
     ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem; // Gap zamiast paddingów na li
+      gap: 2rem;
+      margin: 0 auto; // KLUCZ: Wypycha menu na środek dostępnej przestrzeni
 
       @media (max-width: 768px) {
         flex-direction: column;
         width: 100%;
         text-align: right;
+        margin: 0; // Reset marginesu na mobile
       }
 
       li {
-        a {
+        .navLink {
           text-decoration: none;
           color: var(--on-surface);
-          font-weight: 500;
           text-transform: uppercase;
-          font-size: 0.9rem;
           transition: color 0.3s ease;
 
           &:hover {
@@ -65,7 +64,7 @@
           }
         }
 
-        &.active {
+        &.active .navLink {
           color: var(--primary);
         }
       }
@@ -75,15 +74,6 @@
       display: flex;
       transform: translateX(0);
       animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(0);
-      }
     }
   }
 
@@ -105,8 +95,6 @@
       background-color: var(--primary);
       transition: all 0.3s ease;
     }
-
-    // Animacja ikony w stan aktywny
 
     &.active {
       span:nth-child(1) {
