@@ -11,6 +11,7 @@ const containerVariants = cva(styles.container, {
       base: styles.sizeBase,
       compact: styles.sizeCompact,
       stretch: styles.sizeStretch,
+      small: styles.sizeSmall,
       none: "",
     },
     background: {

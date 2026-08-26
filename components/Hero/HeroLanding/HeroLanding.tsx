@@ -36,6 +36,7 @@ const HeroLanding = () => {
         src="/img/herolanding.jpg"
         alt="Flota Oktech Śląsk"
         loading="eager"
+        sizes="100vw"
       />
     </Container>
   );

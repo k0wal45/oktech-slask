@@ -1,32 +1,33 @@
-'use client';
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { useNav } from '@/context/NavContext';
+"use client";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useNav } from "@/context/NavContext";
+import ContactHero from "@/components/Hero/ContactHero/ContactHero";
+import Map from "@/components/Map/Map";
+import ContactInfo from "@/components/ContactInfo/ContactInfo";
 
 export default function KontaktPage() {
   const pathname = usePathname();
   const { setNavInfo } = useNav();
-  
 
   useEffect(() => {
     setNavInfo({
       path: pathname,
-      sections: [
-        { id: 'kontakt', label: 'kontakt' },
-      ]
+      sections: [{ id: "kontakt", label: "kontakt" }],
     });
 
-    return () => setNavInfo({
-      path: "/",
-      sections: [],
-    });
+    return () =>
+      setNavInfo({
+        path: "/",
+        sections: [],
+      });
   }, [setNavInfo, pathname]);
 
   return (
-    <div className="p-20">
-      <section id="kontakt" style={{height: "100vh", width: "100%", display: "grid", placeItems: "center", }}>
-        <h2 className="machined-label">Kontakt</h2>
-      </section>
+    <div>
+      <ContactHero />
+      <ContactInfo />
+      <Map />
     </div>
   );
 }

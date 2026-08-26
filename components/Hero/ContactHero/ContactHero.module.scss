@@ -1,0 +1,12 @@
+@use "@/styles/abstracts/variables" as *;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    color: var(--primary-container);
+    text-transform: uppercase;
+  }
+}
