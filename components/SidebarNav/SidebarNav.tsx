@@ -14,6 +14,7 @@ export const SidebarNav = () => {
   useEffect(() => {
     if (sections.length === 0) return;
 
+    // Tworzy wąską linię detekcji w okolicy 50% wysokości ekranu
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +24,7 @@ export const SidebarNav = () => {
         });
       },
       {
-        rootMargin: "-89% 0px -20% 0px",
+        rootMargin: "-49% 0px -49% 0px",
         threshold: 0,
       },
     );
@@ -39,7 +40,17 @@ export const SidebarNav = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementRect = element.getBoundingClientRect();
+      const currentScrollY = window.scrollY;
+
+      // Margines 20% wysokości ekranu od góry (sekcja na środku)
+      const topOffset = window.innerHeight * 0.2;
+      const targetPosition = currentScrollY + elementRect.top - topOffset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
     }
   };
 

@@ -8,67 +8,77 @@ import { FaHelmetSafety } from "react-icons/fa6";
 
 const ContactInfo = () => {
   return (
-    <Container size="small" className={styles.info}>
+    <Container
+      id="contactInfo"
+      size="none"
+      background="surface"
+      contentWidth="max"
+      className={styles.info}
+    >
       <div className={styles.card}>
-        <FaHelmetSafety />
-        <Typography as="h2" variant="h5">
-          HDS i zwyżka
-        </Typography>
-        <ul>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Transport ciężki
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Klimatyzacje
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Podnośniki koszowe
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Usługi HDS
-            </Typography>
-          </li>
-        </ul>
-        <Typography variant="h5">
+        <div className={styles.container}>
+          <FaHelmetSafety />
+          <Typography as="h2" variant="h3">
+            HDS i zwyżka
+          </Typography>
+          <ul>
+            <li>
+              <Typography as="p" variant="titleM">
+                Transport ciężki
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Klimatyzacje
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Podnośniki koszowe
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Usługi HDS
+              </Typography>
+            </li>
+          </ul>
+        </div>
+        <Typography variant="h3">
           <a href="tel:+48604476647">+48 604 47 66 47</a>
         </Typography>
         <Image width={600} height={600} alt="" src="/img/hds.jpg" />
       </div>
       <div className={styles.card}>
-        <FaCarAlt />
-        <Typography as="h2" variant="h5">
-          Wypożyczalnia
-        </Typography>
-        <ul>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Autolaweta
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Dostawcze
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Osobowe
-            </Typography>
-          </li>
-          <li>
-            <Typography as="p" variant="bodyM">
-              Cabrio
-            </Typography>
-          </li>
-        </ul>
-        <Typography variant="h5">
+        <div className={styles.container}>
+          <FaCarAlt />
+          <Typography as="h2" variant="h3">
+            Wypożyczalnia
+          </Typography>
+          <ul>
+            <li>
+              <Typography as="p" variant="titleM">
+                Autolaweta
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Dostawcze
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Osobowe
+              </Typography>
+            </li>
+            <li>
+              <Typography as="p" variant="titleM">
+                Cabrio
+              </Typography>
+            </li>
+          </ul>
+        </div>
+        <Typography variant="h3">
           <a href="tel:+48533254426">+48 533 25 44 26</a>
         </Typography>
         <Image width={600} height={600} alt="" src="/img/wypozyczalnia.jpg" />

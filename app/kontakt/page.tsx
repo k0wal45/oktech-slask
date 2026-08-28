@@ -5,6 +5,8 @@ import { useNav } from "@/context/NavContext";
 import ContactHero from "@/components/Hero/ContactHero/ContactHero";
 import Map from "@/components/Map/Map";
 import ContactInfo from "@/components/ContactInfo/ContactInfo";
+import ServicesList from "@/components/Services/ServicesList/ServicesList";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function KontaktPage() {
   const pathname = usePathname();
@@ -13,7 +15,11 @@ export default function KontaktPage() {
   useEffect(() => {
     setNavInfo({
       path: pathname,
-      sections: [{ id: "kontakt", label: "kontakt" }],
+      sections: [
+        { id: "contactInfo", label: "Informacje" },
+        { id: "contactForm", label: "Formularz" },
+        { id: "contactMap", label: "Mapa" },
+      ],
     });
 
     return () =>
@@ -27,6 +33,7 @@ export default function KontaktPage() {
     <div>
       <ContactHero />
       <ContactInfo />
+      <ContactForm />
       <Map />
     </div>
   );

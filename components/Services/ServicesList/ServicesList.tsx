@@ -58,6 +58,7 @@ const ServicesList = () => {
       id="services"
       size="none"
       className={styles.services}
+      contentWidth="none"
     >
       {SERVICES_DATA.map((service) => {
         const IconComponent = service.icon;

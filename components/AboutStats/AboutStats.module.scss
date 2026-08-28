@@ -1,0 +1,88 @@
+@use "@/styles/abstracts/variables" as *;
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 2.5rem;
+  min-height: 320px;
+  position: relative;
+  transition: transform 0.2s ease;
+
+  @media (max-width: 768px) {
+    min-height: 260px;
+    padding: 2rem;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .iconWrapper {
+    font-size: 2.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .bottomContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Wariant 1: Ciemna karta z pomarańczową dolną belką */
+.cardDark {
+  background-color: var(--surface-container);
+  border-bottom: 4px solid var(--primary);
+
+  .iconWrapper {
+    color: var(--primary);
+  }
+
+  .mainText {
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .description {
+    color: var(--surface-bright);
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+/* Wariant 2: Pomarańczowa, mocna karta środkowa */
+.cardPrimary {
+  background-color: var(--primary);
+  color: var(--on-primary-fixed);
+
+  .iconWrapper {
+    color: var(--on-primary-fixed);
+  }
+
+  .mainText {
+    color: var(--on-primary-fixed);
+    line-height: 1.1;
+  }
+
+  .description {
+    color: rgba(44, 22, 0, 0.85);
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}

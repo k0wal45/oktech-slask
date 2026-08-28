@@ -10,6 +10,7 @@ const ContactHero = () => {
       size="small"
       background="surface"
       className={styles.contact}
+      contentWidth="max"
     >
       <Typography as="h1" variant="hero">
         Kontakt

@@ -1,0 +1,106 @@
+@use "@/styles/abstracts/variables" as *;
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-container-high); // Szare tło prawej strony
+  overflow: hidden;
+
+  // Lewy ciemny blok tła (odcięcie dokładnie w pionie)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36%;
+    height: 100%;
+    background-color: var(--surface-lowest);
+    z-index: 1;
+
+    @media (max-width: 1100px) {
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        var(--surface-lowest) 40%,
+        rgba(14, 14, 14, 0.8) 100%
+      );
+    }
+  }
+
+  @media (max-width: 1024px) {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 900px;
+}
+
+.title {
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+
+  .accent {
+    color: var(--primary);
+  }
+}
+
+.quoteBox {
+  display: flex;
+  align-items: stretch;
+  max-width: 700px;
+  gap: 1.25rem;
+
+  .verticalLine {
+    width: 3px;
+    flex-shrink: 0;
+    background-color: var(--primary);
+  }
+
+  .description {
+    color: var(--surface-bright);
+    line-height: 1.55;
+    font-size: 1.05rem;
+  }
+}
+
+/* --- PRAWA STRONA: ZDJĘCIE MASZYNY I OZDOBNY ROMB --- */
+.machineWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    opacity: 0.25;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: bottom right;
+    filter: grayscale(1) contrast(1.1) brightness(0.5);
+  }
+
+  // Ozdobny techniczny romb w prawym dolnym rogu
+}

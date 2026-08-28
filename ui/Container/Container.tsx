@@ -53,7 +53,6 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
       size,
       background,
       contentWidth = "none",
-      contentClassName,
       ...props
     },
     ref,
@@ -61,15 +60,16 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
     return (
       <Component
         ref={ref as any}
-        className={cn(containerVariants({ size, background }), className)}
+        className={cn(
+          containerVariants({ size, background }),
+          contentWidth === "none" ? className : null,
+        )}
         {...props}
       >
         {contentWidth === "none" ? (
           children
         ) : (
-          <div
-            className={cn(contentWidthStyles[contentWidth], contentClassName)}
-          >
+          <div className={cn(contentWidthStyles[contentWidth], className)}>
             {children}
           </div>
         )}

@@ -1,32 +1,41 @@
-'use client';
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { useNav } from '@/context/NavContext';
+"use client";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useNav } from "@/context/NavContext";
+import HeroAbout from "@/components/Hero/HeroAbout/HeroAbout";
+import AboutLocation from "@/components/AboutLocation/AboutLocation";
+import AboutStats from "@/components/AboutStats/AboutStats";
+import Timeline from "@/components/Timeline/Timeline";
+import CallToAction from "@/components/callToAction/CallToAction";
 
 export default function OnasPage() {
   const pathname = usePathname();
   const { setNavInfo } = useNav();
-  
 
   useEffect(() => {
     setNavInfo({
       path: pathname,
       sections: [
-        { id: 'onas', label: 'O Nas' },
-      ]
+        { id: "statsonas", label: "O Nas" },
+        { id: "statsstats", label: "Statystyki" },
+        { id: "statsevo", label: "Ewolucja" },
+      ],
     });
 
-    return () => setNavInfo({
-      path: "/",
-      sections: [],
-    });
+    return () =>
+      setNavInfo({
+        path: "/",
+        sections: [],
+      });
   }, [setNavInfo, pathname]);
 
   return (
     <div className="p-20">
-      <section id="onas" style={{height: "100vh", width: "100%", display: "grid", placeItems: "center", }}>
-        <h2 className="machined-label">O Nas</h2>
-      </section>
+      <HeroAbout />
+      <AboutLocation />
+      <AboutStats />
+      <Timeline />
+      <CallToAction />
     </div>
   );
 }
