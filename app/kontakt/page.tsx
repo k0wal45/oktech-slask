@@ -5,7 +5,6 @@ import { useNav } from "@/context/NavContext";
 import ContactHero from "@/components/Hero/ContactHero/ContactHero";
 import Map from "@/components/Map/Map";
 import ContactInfo from "@/components/ContactInfo/ContactInfo";
-import ServicesList from "@/components/Services/ServicesList/ServicesList";
 import ContactForm from "@/components/ContactForm/ContactForm";
 
 export default function KontaktPage() {

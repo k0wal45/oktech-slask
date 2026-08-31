@@ -1,32 +1,31 @@
-'use client';
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { useNav } from '@/context/NavContext';
+"use client";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useNav } from "@/context/NavContext";
+import HeroServices from "@/components/Hero/HeroServices/HeroServices";
+import ServicesGrid from "@/components/ServicesGrid/ServicesGrid";
 
 export default function UslugiPage() {
   const pathname = usePathname();
   const { setNavInfo } = useNav();
-  
 
   useEffect(() => {
     setNavInfo({
       path: pathname,
-      sections: [
-        { id: 'uslugi', label: 'Uslugi' },
-      ]
+      sections: [{ id: "uslugi", label: "Uslugi" }],
     });
 
-    return () => setNavInfo({
-      path: "/",
-      sections: [],
-    });
+    return () =>
+      setNavInfo({
+        path: "/",
+        sections: [],
+      });
   }, [setNavInfo, pathname]);
 
   return (
     <div className="p-20">
-      <section id="uslugi" style={{height: "100vh", width: "100%", display: "grid", placeItems: "center", }}>
-        <h2 className="machined-label">Uslugi</h2>
-      </section>
+      <HeroServices />
+      <ServicesGrid />
     </div>
   );
 }

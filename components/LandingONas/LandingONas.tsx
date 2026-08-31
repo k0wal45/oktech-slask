@@ -13,30 +13,29 @@ const LandingONas = () => {
       background="container"
       size="base"
       contentWidth="max"
-      contentClassName={styles.container}
     >
-      {/* Lewa strona: Duże zdjęcie */}
-      <div className={styles.gridPanelBig}>
-        <Image
-          src="/img/herolanding.jpg"
-          alt="Siedziba"
-          fill
-          style={{ objectFit: "cover" }}
-        />
-        <div className={styles.cornerOverlay}></div>
-        <div className={styles.textOverlay}>
-          <Typography as="h5" variant="h5">
-            SIEDZIBA OKTECH
-          </Typography>
-          <Typography as="p" variant="bodyM" className={styles.overlayDesc}>
-            Centrum dowodzenia i serce operacyjne konglomeratu. Nowoczesna
-            infrastruktura wspierająca rozwój przemysłu.
-          </Typography>
+      <div className={styles.grid}>
+        {/* Lewy box - duży (2 wiersze) */}
+        <div className={styles.gridPanelBig}>
+          <Image
+            src="/img/herolanding.jpg"
+            alt="Siedziba"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+          <div className={styles.cornerOverlay}></div>
+          <div className={styles.textOverlay}>
+            <Typography as="h5" variant="h5">
+              SIEDZIBA OKTECH
+            </Typography>
+            <Typography as="p" variant="bodyM" className={styles.overlayDesc}>
+              Centrum dowodzenia i serce operacyjne konglomeratu. Nowoczesna
+              infrastruktura wspierająca rozwój przemysłu.
+            </Typography>
+          </div>
         </div>
-      </div>
 
-      {/* Prawa strona: Dwa mniejsze panele */}
-      <div className={styles.rightSide}>
+        {/* Prawy górny box */}
         <div className={styles.servicePanel}>
           <Typography as="h5" variant="h5" className={styles.primaryTitle}>
             PROTOKÓŁ SERWISOWY
@@ -48,6 +47,7 @@ const LandingONas = () => {
           </Typography>
         </div>
 
+        {/* Prawy dolny box */}
         <div className={styles.b2bPanel}>
           <Typography as="h5" variant="h5">
             WSPÓŁPRACA B2B

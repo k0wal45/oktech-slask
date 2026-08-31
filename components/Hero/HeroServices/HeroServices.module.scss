@@ -1,12 +1,70 @@
 @use "@/styles/abstracts/variables" as *;
 
-.contact {
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.headline {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 
-  p {
-    color: var(--primary-container);
-    text-transform: uppercase;
+  .titleWhite {
+    color: var(--surface-bright, #ffffff);
+  }
+
+  .titlePrimary {
+    color: var(--primary);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+    @media (max-width: 1024px) {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  .description {
+    color: var(--surface-bright, #d1d5db);
+    max-width: 520px;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+
+  .statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .statValue {
+      color: var(--surface-bright, #ffffff);
+    }
+
+    .statLabel {
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
 }
