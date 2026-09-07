@@ -1,0 +1,263 @@
+@use "@/styles/abstracts/variables" as *;
+
+.cardWrapper {
+  background-color: var(--surface-container);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 900px) {
+    padding: 1.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  align-items: start;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- LEWA KOLUMNA: FOTO + TONY OPERACYJNE --- */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topBarMedia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .unitId {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--surface-bright);
+    font-family: var(--font-space);
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .licenseTag {
+    background-color: var(--primary);
+    color: var(--surface-lowest);
+    font-family: var(--font-space);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-container-low);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  img {
+    object-fit: cover;
+    filter: contrast(1.05) brightness(0.9);
+  }
+}
+
+.subFeaturesRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+
+  .featureBadge {
+    background-color: var(--surface-container-low);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--surface-bright);
+    font-family: var(--font-space);
+    font-size: 0.75rem;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* --- PRAWA KOLUMNA: DANE, TABELA SPECS I AKCJA --- */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  .titleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    .subTag {
+      color: var(--primary);
+      font-family: var(--font-space);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .mainTitle {
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+  }
+
+  .priceBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+
+    .priceLabel {
+      color: var(--surface-bright);
+      opacity: 0.6;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .priceValue {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+
+      .amount {
+        color: var(--primary);
+        font-family: var(--font-space);
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .unit {
+        color: var(--surface-bright);
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.description {
+  color: var(--surface-bright);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.quickPillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-left: 2px solid var(--primary);
+  padding: 0.75rem 0 0.75rem 1rem;
+  background-color: var(--surface-container-low);
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    .pLabel {
+      color: var(--surface-bright);
+      opacity: 0.6;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pValue {
+      color: #ffffff;
+      font-family: var(--font-space);
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      &.highlight {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.specsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+
+  .specsHeader {
+    color: var(--surface-bright);
+    opacity: 0.7;
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .specsTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      padding: 0.65rem 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .keyCol {
+      color: var(--surface-bright);
+      width: 55%;
+    }
+
+    .valCol {
+      color: #ffffff;
+      font-family: var(--font-space);
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+}
+
+.extraNote {
+  color: var(--surface-bright);
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.actionButton {
+  width: 100%;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,139 @@
+@use "@/styles/abstracts/variables" as *;
+
+.cardWrapper {
+  background-color: var(--surface-container);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--primary);
+  padding: 3rem 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    .category {
+      color: var(--primary);
+      font-family: var(--font-space);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .name {
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+
+  .pricing {
+    text-align: right;
+
+    @media (max-width: 640px) {
+      text-align: left;
+    }
+
+    .rate {
+      color: var(--primary);
+      font-family: var(--font-space);
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+
+    .deposit {
+      color: var(--surface-bright);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-container-low);
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    filter: grayscale(0.2) contrast(1.05);
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    padding: 0.85rem 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .keyCol {
+    color: var(--surface-bright);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 48%;
+  }
+
+  .valCol {
+    color: #ffffff;
+    font-family: var(--font-space);
+    font-weight: 700;
+    text-align: right;
+  }
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+
+  @media (max-width: 600px) {
+    button,
+    a {
+      width: 100%;
+    }
+  }
+}

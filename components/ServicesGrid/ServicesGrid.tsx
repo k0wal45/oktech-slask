@@ -29,6 +29,15 @@ const services: ServiceItem[] = [
     buttonVariant: "primary",
   },
   {
+    id: "klimatyzacja",
+    title: "KLIMATYZACJA",
+    href: "/uslugi/klimatyzacja",
+    imageSrc: "/img/klima.jpg",
+    imageAlt: "KLIMATYZACJA",
+    icon: <RiTempColdLine size={30} />,
+    buttonVariant: "outline",
+  },
+  {
     id: "hds-transport",
     title: "HDS\nTRANSPORT",
     href: "/uslugi/hds",
@@ -44,15 +53,6 @@ const services: ServiceItem[] = [
     imageSrc: "/img/zwyzka.jpg",
     imageAlt: "Tow Truck Rental",
     icon: <TbTruckLoading size={32} />,
-    buttonVariant: "outline",
-  },
-  {
-    id: "klimatyzacja",
-    title: "KLIMATYZACJA",
-    href: "/uslugi/klimatyzacja",
-    imageSrc: "/img/klima.jpg",
-    imageAlt: "KLIMATYZACJA",
-    icon: <RiTempColdLine size={30} />,
     buttonVariant: "outline",
   },
 ];

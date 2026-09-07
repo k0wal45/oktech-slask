@@ -1,0 +1,196 @@
+@use "@/styles/abstracts/variables" as *;
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+/* --- GÓRNY PASEK NAGŁÓWKA --- */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .titleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .topSubTitle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .mainTitle {
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      max-width: 650px;
+    }
+  }
+
+  .fleetBanner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    background-color: var(--primary);
+    color: var(--surface-lowest);
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-space);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(255, 154, 0, 0.2);
+
+    svg {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      white-space: normal;
+    }
+  }
+}
+
+/* --- GŁÓWNY GRID (RADAR + DANE MIAST) --- */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+  width: 100%;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- LEWA STRONA: RADAR Z SIATKĄ --- */
+.radarContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--surface-container);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  overflow: hidden;
+
+  // Techniczna siatka w tle
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+
+  .radarCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .radarFooter {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+
+    .radiusText {
+      color: var(--surface-bright);
+      letter-spacing: 1.5px;
+      font-size: 0.7rem;
+    }
+
+    .expansionText {
+      color: var(--primary);
+      letter-spacing: 1.5px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+  }
+}
+
+/* --- PRAWA STRONA: LISTA MIAST I BOX POŁUDNIOWY --- */
+.detailsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  .detailsTitle {
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .detailsDesc {
+    color: var(--surface-bright);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Siatka czasów dojazdu */
+  .timesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1rem;
+    width: 100%;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+
+    .timeRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--surface-container);
+      padding: 0.9rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+
+      .cityName {
+        color: #ffffff;
+        font-family: var(--font-space);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .cityDuration {
+        color: var(--primary);
+        font-family: var(--font-space);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  /* Dolny panel relokacji dalekobieżnych */
+}

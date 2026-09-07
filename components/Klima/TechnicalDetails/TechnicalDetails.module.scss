@@ -1,0 +1,114 @@
+@use "@/styles/abstracts/variables" as *;
+
+/* Wrapper wymuszający jasny motyw dla tej sekcji */
+.lightSection {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- LEWA STRONA: TEKST --- */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  .heading {
+    text-transform: uppercase;
+    color: #000000; // Nadpisanie ciemnego motywu
+    line-height: 1.15;
+  }
+
+  .description {
+    color: #4a4a4a; // Ciemnoszary dla czytelności na białym
+    line-height: 1.6;
+    max-width: 95%;
+  }
+
+  .featuresList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-space);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+
+      // Pomarańczowy kwadratowy punktor
+      &::before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary);
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+/* --- PRAWA STRONA: ZDJĘCIE Z RAMKĄ --- */
+.imageContent {
+  position: relative;
+  background-color: #111111; // Ciemna, gruba rama w tle
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  // Plakietka "High Tech Design" w prawym górnym rogu ramy
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary);
+    color: var(--surface-lowest);
+    padding: 0.6rem 1.25rem;
+    font-family: var(--font-space);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+  }
+
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(255, 255, 255, 0.1); // Subtelna wewnętrzna obwoluta
+
+    img {
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@use "@/styles/abstracts/variables" as *;
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 2rem;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .titleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .mainTitle {
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .subTitle {
+      color: var(--surface-bright);
+      opacity: 0.6;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+    }
+  }
+
+  .revCode {
+    color: var(--primary);
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.card {
+  position: relative;
+  background-color: var(--surface-container);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  border-right: 3px solid var(--primary); // Pionowa listwa z prawej strony każdej karty
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    min-height: 320px;
+  }
+
+  .topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .icon {
+      font-size: 2.25rem;
+      color: var(--primary);
+    }
+
+    .watermarkNumber {
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  .midBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem 0;
+
+    .label {
+      color: var(--surface-bright);
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .value {
+      color: #ffffff;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+  }
+
+  .bottomIndicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    .indicatorLabels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .indSub {
+        color: var(--surface-bright);
+        letter-spacing: 1.5px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+
+      .indVal {
+        color: #ffffff;
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+    }
+
+    // Pasek wskaźnika poziomu
+    .progressBarTrack {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.08);
+
+      .progressBarFill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: var(--primary);
+      }
+    }
+  }
+}
