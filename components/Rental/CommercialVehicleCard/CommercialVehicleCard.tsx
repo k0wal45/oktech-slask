@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Typography } from "@/ui/Typography/Typography";
 import { Button } from "@/ui/Button/Button";
 import styles from "./CommercialVehicleCard.module.scss";
 
@@ -69,9 +68,7 @@ export const CommercialVehicleCard = ({ vehicle }: Props) => {
           <div className={styles.headerRow}>
             <div className={styles.titleBlock}>
               <span className={styles.subTag}>{vehicle.subType}</span>
-              <Typography as="h3" variant="h2" className={styles.mainTitle}>
-                {vehicle.name}
-              </Typography>
+              <h3 className={styles.mainTitle}>{vehicle.name}</h3>
             </div>
 
             <div className={styles.priceBlock}>
@@ -102,21 +99,19 @@ export const CommercialVehicleCard = ({ vehicle }: Props) => {
             </div>
           </div>
 
-          {/* Tabela mapująca specyfikację [{key, value}] */}
+          {/* Elastyczna lista parametrów zamiast sztywnej tabeli */}
           <div className={styles.specsSection}>
             <span className={styles.specsHeader}>
               PARAMETRY TECHNICZNE JEDNOSTKI
             </span>
-            <table className={styles.specsTable}>
-              <tbody>
-                {vehicle.specs.map((spec, index) => (
-                  <tr key={index}>
-                    <td className={styles.keyCol}>{spec.key}</td>
-                    <td className={styles.valCol}>{spec.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <ul className={styles.specsList}>
+              {vehicle.specs.map((spec, index) => (
+                <li key={index} className={styles.specRow}>
+                  <span className={styles.keyCol}>{spec.key}</span>
+                  <span className={styles.valCol}>{spec.value}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {vehicle.includedEquipment && (
